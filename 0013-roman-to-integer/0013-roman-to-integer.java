@@ -1,9 +1,7 @@
 class Solution {
-    public int romanToInt(String s) {
-        //Romans to Integer -> use I,V,X,L,C,D,M 
-        //hashmap or switch/case possible
+    public int romanToInt(String s){
 
-        Map<Character, Integer> romans = new HashMap<>();
+        Map<Character,Integer> romans = new HashMap<>();
 
         romans.put('I', 1);
         romans.put('V', 5);
@@ -13,16 +11,15 @@ class Solution {
         romans.put('D', 500);
         romans.put('M', 1000);
 
-        int ans = 0;
+       int answer = 0;
 
-        for (int i = 0; i < s.length(); i++) {
+       for (int i = 0; i < s.length(); i++) {
             if (i < s.length() - 1 && romans.get(s.charAt(i)) < romans.get(s.charAt(i+1))) {
-                ans -= romans.get(s.charAt(i));
+                answer -= romans.get(s.charAt(i));
             } else {
-                ans += romans.get(s.charAt(i));
+                answer += romans.get(s.charAt(i));
             }
-        }
-        
-    return ans;
+       }
+       return answer;
     }
 }
