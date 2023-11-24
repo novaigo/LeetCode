@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+const twoSum = function(nums, target) {
     if (nums.length === 2) return [0,1];
     let arr = [];
     for (let i = 0; i < nums.length; i++) {
